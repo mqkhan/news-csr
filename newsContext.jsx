@@ -15,8 +15,6 @@ const newsReducer = (state, action) => {
   }
 };
 
-// const NewsProvider = ({ children }) =>
-
 function NewsProvider({ children }) {
   const [state, dispatch] = useReducer(newsReducer, initialState);
 
@@ -32,13 +30,5 @@ function NewsProvider({ children }) {
 }
 
 const useNewsContext = () => useContext(NewsContext);
-
-// const useNewsContext = () => {
-//   const context = useContext(NewsContext);
-//   if (!context) {
-//     throw new Error("useNewsContext must be used within a NewsProvider");
-//   }
-//   return context;
-// };
 
 export { NewsProvider, useNewsContext };
